@@ -11,12 +11,20 @@ spring:
 #      chat:
 #        model: deepseek-r1:1.5b
   ai:
-    vectorstore:
-      pgvector:
-        index-type: HNSW
-        dimensions: 1536
-        distance-type: COSINE_DISTANCE
-        max-document-batch-size: 10000 # Optional: Maximum number of documents per batch
+#    vectorstore:
+#      pgvector:
+#        index-type: HNSW
+#        dimensions: 1536
+#        distance-type: COSINE_DISTANCE
+#        max-document-batch-size: 10000 # Optional: Maximum number of documents per batch
+    mcp:
+      client:
+#        sse:
+#          connections:
+#            server1:
+#              url: http://localhost:8127
+        stdio:
+          servers-configuration: classpath:mcp-servers.json
 
 
 server:
